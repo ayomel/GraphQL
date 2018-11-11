@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import gql from 'graphql-tag'
-import { Query, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
 
 class SongList extends Component {
   render() {
-    let {loading, songs} = this.props.data;
-    console.log(this.props)
+    const {loading, songs} = this.props.data;
     if (loading) return null
     return (
       <div>
