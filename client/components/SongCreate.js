@@ -15,13 +15,13 @@ class SongCreate extends Component {
     this.props.mutate({
       variables: {
         title: this.state.title
-      }
+      } 
     }).then(() => hashHistory.push('/'))
   }
   render() {
     return (
       <div>
-        
+        <Link to="/">Back</Link>
         <h3>Create a new song</h3>
         <form onSubmit={this.onSubmit.bind(this)}>
           <label>Song Title:</label>

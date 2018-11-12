@@ -14,7 +14,9 @@ class SongList extends Component {
             <li className="collection-item" key={song.id}>{song.title}</li>
           ))}
         </ul>
-        <Link to="/songs/new" className="btn-floating btn-large red right"></Link>
+        <Link to="/songs/new" className="btn-floating btn-large red right">
+          <i className="material-icons">add</i>
+        </Link>
       </div>
     ) 
   }
