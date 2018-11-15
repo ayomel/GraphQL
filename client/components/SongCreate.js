@@ -7,7 +7,6 @@ import query from '../queries/fetchSong'
 class SongCreate extends Component {
   constructor(props) {
     super(props);
-
     this.state = { title: ''}
   }
 
@@ -44,3 +43,14 @@ const mutation = gql`
 `;
 
 export default graphql(mutation)(SongCreate);
+
+function solution(A) {
+  var ans = 0;
+  for (let i = 0; i < A.length; i++) {
+    if(ans > A[i]) {
+      return ans = A[i];
+    }
+    
+  }
+  return ans
+}
