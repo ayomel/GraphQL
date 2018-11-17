@@ -3,17 +3,28 @@ import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 
 class LyricList extends Component {
-  onLike(id) {
+  onLike(id, likes) {
     this.props.mutate({
-      variables: { id }
+      variables: { id },
+      optimisticResponse: {
+        __typename: 'Mutation',
+        likeLyric: {
+          id: id,
+          __typename: 'LyricType',
+          likes: likes + 1
+        }
+      }
     })
   }
   renderLyrics() {
-    return this.props.lyrics.map(({id, content}) => {
+    return this.props.lyrics.map(({id, content, likes}) => {
       return (
         <li className="collection-item" key={id}>
           {content}
-          <i className="material-icons" onClick={() => this.onLike(id)}>thumb_up</i> 
+          <div className="vote-box">
+            <i className="material-icons" onClick={() => this.onLike(id, likes)}>thumb_up</i> 
+            {likes} 
+          </div>
         </li>
       )
     })

@@ -1,8 +1,16 @@
 .collection-item {
+  margin: 10px 30px;
   display: flex;
   justify-content: space-between;
+  border: 1px solid grey;
+  padding: 10px;
 }
 
 .material-icons {
   cursor: pointer;
+  margin-right: 5px;
+}
+.vote-box {
+  display: flex;
+  align-items: center
 }
