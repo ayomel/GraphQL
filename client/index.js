@@ -10,7 +10,10 @@ import App from './components/App'
 import SongCreate from './components/SongCreate';
 import SongDetail from './components/SongDetail';
 
-const client = new ApolloClient({});
+const client = new ApolloClient({
+  // when mutation occurs song id updates along with the component
+  dataIdFromObject: o => o.id
+});
 
 const Root = () => {
   return (
