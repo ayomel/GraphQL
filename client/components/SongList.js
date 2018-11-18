@@ -12,7 +12,9 @@ class SongList extends Component {
   }
   render() {
     const {loading, songs} = this.props.data;
-    if (loading) return null
+    if (loading) {
+      return <div>Loading...</div>
+    }
     return (
       <div>
         <ul className="collection">
